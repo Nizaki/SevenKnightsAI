@@ -12,12 +12,6 @@ namespace SevenKnightsAI.Classes
     {
         #region Public Fields
 
-        [XmlElement(ElementName = "AD_BoostMode")]
-        public bool AD_Noostmode;
-
-        [XmlElement(ElementName = "AD_StopAt100")]
-        public bool AD_StopAt100;
-
         [XmlElement(ElementName = "AD_AmountSequence")]
         public int[] AD_AmountSequence;
 

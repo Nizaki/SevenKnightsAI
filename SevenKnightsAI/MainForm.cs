@@ -765,6 +765,7 @@ namespace SevenKnightsAI
             this.AD_continuousCheckBox.Checked = this.AISettings.AD_Continuous;
             this.AD_elementHeroesCheckBox.Checked = this.AISettings.AD_ElementHeroesOnly;
             //this.AD_masteryComboBox.SelectedIndex = (int)this.AISettings.AD_Mastery;
+            this.AD_masteryComboBox.SelectedIndex = 0;
             this.AD_StopOnFullHeroes_Checkbox.Checked = this.AISettings.AD_StopOnFullHeroes;
             this.AD_StopOnFullItems_Checkbox.Checked = this.AISettings.AD_StopOnFullItems;
             this.RD_StopOnDragonFound_Checkbox.Checked = this.AISettings.RD_StopOnDragonFound;
@@ -1934,12 +1935,6 @@ namespace SevenKnightsAI
                 default:
                     return;
             }
-        }
-
-        private void AD_Bootsmode_Checkbox_CheckedChanged(object sender, EventArgs e)
-        {
-            CheckBox checkBox = sender as CheckBox;
-            this.AISettings.AD_StopAt100 = checkBox.Checked;
         }
     }
 }

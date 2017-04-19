@@ -104,7 +104,6 @@ namespace SevenKnightsAI.Classes
         public static int ColorToInt(Color color)
         {
             string value = string.Format("{0}{1}{2}", color.R.ToString("X2"), color.G.ToString("X2"), color.B.ToString("X2"));
-            Console.WriteLine(Convert.ToInt32(value));
             return Convert.ToInt32(value, 16);
         }
 
