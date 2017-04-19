@@ -49,8 +49,6 @@
             this.AD_worldLabel = new System.Windows.Forms.Label();
             this.AD_difficultyComboBox = new System.Windows.Forms.ComboBox();
             this.AD_skillGroupBox = new System.Windows.Forms.GroupBox();
-            this.AD_masteryComboBox = new System.Windows.Forms.ComboBox();
-            this.AD_masteryLabel = new System.Windows.Forms.Label();
             this.AD_bothSkillRadio = new System.Windows.Forms.RadioButton();
             this.AD_wave3Panel = new System.Windows.Forms.Panel();
             this.AD_wave3LoopCheckBox = new System.Windows.Forms.CheckBox();
@@ -439,6 +437,8 @@
             this.goldLabel = new System.Windows.Forms.Label();
             this.resourcesTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.aiPause = new System.Windows.Forms.Button();
+            this.AD_Bootsmode_Checkbox = new System.Windows.Forms.CheckBox();
+            this.AD_StopAt100_Checkbox = new System.Windows.Forms.CheckBox();
             this.tabControl.SuspendLayout();
             this.adventureTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AD_limitNumericBox)).BeginInit();
@@ -590,6 +590,8 @@
             // 
             // AD_mainPanel
             // 
+            this.AD_mainPanel.Controls.Add(this.AD_StopAt100_Checkbox);
+            this.AD_mainPanel.Controls.Add(this.AD_Bootsmode_Checkbox);
             this.AD_mainPanel.Controls.Add(this.AD_difficultyComboBox2nd);
             this.AD_mainPanel.Controls.Add(this.AD_StopOnLV30_Checkbox);
             this.AD_mainPanel.Controls.Add(this.AD_StopOnFullItems_Checkbox);
@@ -792,7 +794,7 @@
             this.AD_formationPanel.Controls.Add(this.AD_pos3CheckBox);
             this.AD_formationPanel.Controls.Add(this.AD_pos2CheckBox);
             this.AD_formationPanel.Controls.Add(this.AD_pos1CheckBox);
-            this.AD_formationPanel.Location = new System.Drawing.Point(74, 160);
+            this.AD_formationPanel.Location = new System.Drawing.Point(141, 160);
             this.AD_formationPanel.Name = "AD_formationPanel";
             this.AD_formationPanel.Size = new System.Drawing.Size(80, 85);
             this.AD_formationPanel.TabIndex = 12;
@@ -908,8 +910,6 @@
             // 
             // AD_skillGroupBox
             // 
-            this.AD_skillGroupBox.Controls.Add(this.AD_masteryComboBox);
-            this.AD_skillGroupBox.Controls.Add(this.AD_masteryLabel);
             this.AD_skillGroupBox.Controls.Add(this.AD_bothSkillRadio);
             this.AD_skillGroupBox.Controls.Add(this.AD_wave3Panel);
             this.AD_skillGroupBox.Controls.Add(this.AD_wave2Panel);
@@ -923,33 +923,6 @@
             this.AD_skillGroupBox.TabStop = false;
             this.AD_skillGroupBox.Tag = "0";
             this.AD_skillGroupBox.Text = "Skill Management";
-            // 
-            // AD_masteryComboBox
-            // 
-            this.AD_masteryComboBox.DisplayMember = "0";
-            this.AD_masteryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.AD_masteryComboBox.FormattingEnabled = true;
-            this.AD_masteryComboBox.Items.AddRange(new object[] {
-            "--",
-            "1",
-            "2",
-            "3"});
-            this.AD_masteryComboBox.Location = new System.Drawing.Point(197, 14);
-            this.AD_masteryComboBox.Name = "AD_masteryComboBox";
-            this.AD_masteryComboBox.Size = new System.Drawing.Size(46, 21);
-            this.AD_masteryComboBox.TabIndex = 14;
-            this.AD_masteryComboBox.Tag = "0";
-            this.AD_masteryComboBox.ValueMember = "0";
-            this.AD_masteryComboBox.SelectedIndexChanged += new System.EventHandler(this.masteryComboBox_SelectedIndexChanged);
-            // 
-            // AD_masteryLabel
-            // 
-            this.AD_masteryLabel.AutoSize = true;
-            this.AD_masteryLabel.Location = new System.Drawing.Point(145, 18);
-            this.AD_masteryLabel.Name = "AD_masteryLabel";
-            this.AD_masteryLabel.Size = new System.Drawing.Size(44, 13);
-            this.AD_masteryLabel.TabIndex = 13;
-            this.AD_masteryLabel.Text = "Mastery";
             // 
             // AD_bothSkillRadio
             // 
@@ -5432,6 +5405,27 @@
             this.aiPause.UseVisualStyleBackColor = true;
             this.aiPause.Click += new System.EventHandler(this.aiPause_Click);
             // 
+            // AD_Bootsmode_Checkbox
+            // 
+            this.AD_Bootsmode_Checkbox.AutoSize = true;
+            this.AD_Bootsmode_Checkbox.Location = new System.Drawing.Point(6, 160);
+            this.AD_Bootsmode_Checkbox.Name = "AD_Bootsmode_Checkbox";
+            this.AD_Bootsmode_Checkbox.Size = new System.Drawing.Size(82, 17);
+            this.AD_Bootsmode_Checkbox.TabIndex = 28;
+            this.AD_Bootsmode_Checkbox.Text = "Boost mode";
+            this.AD_Bootsmode_Checkbox.UseVisualStyleBackColor = true;
+            this.AD_Bootsmode_Checkbox.CheckedChanged += new System.EventHandler(this.AD_Bootsmode_Checkbox_CheckedChanged);
+            // 
+            // AD_StopAt100_Checkbox
+            // 
+            this.AD_StopAt100_Checkbox.AutoSize = true;
+            this.AD_StopAt100_Checkbox.Location = new System.Drawing.Point(6, 183);
+            this.AD_StopAt100_Checkbox.Name = "AD_StopAt100_Checkbox";
+            this.AD_StopAt100_Checkbox.Size = new System.Drawing.Size(105, 17);
+            this.AD_StopAt100_Checkbox.TabIndex = 29;
+            this.AD_StopAt100_Checkbox.Text = "Stop At 100/100";
+            this.AD_StopAt100_Checkbox.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AcceptButton = this.aiButton;
@@ -5634,11 +5628,7 @@
 		
 		private global::System.Windows.Forms.RadioButton AD_manualSkillRadio;
 
-		
-		private global::System.Windows.Forms.ComboBox AD_masteryComboBox;
 
-		
-		private global::System.Windows.Forms.Label AD_masteryLabel;
 
 		
 		private global::System.Windows.Forms.CheckBox AD_pos1CheckBox;
@@ -6553,5 +6543,7 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox AD_StopAt100_Checkbox;
+        private System.Windows.Forms.CheckBox AD_Bootsmode_Checkbox;
     }
 }
