@@ -105,7 +105,6 @@ namespace SevenKnightsAI.Classes
             try
             {
                 result = this.MainWindowAS.GetPixel(x + BlueStacks.OFFSET_X, y + BlueStacks.OFFSET_Y);
-                Console.WriteLine("getpixelcolor is ;" + result);
             }
             catch
             {

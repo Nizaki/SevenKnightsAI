@@ -14,7 +14,6 @@ using System.Threading;
 using System.Timers;
 using System.Windows.Forms;
 using Tesseract;
-using ImageMagick;
 
 namespace SevenKnightsAI.Classes
 {
@@ -2232,6 +2231,8 @@ namespace SevenKnightsAI.Classes
                                             break;
 
                                         case SceneType.MASTERY_POPUP:
+                                            this.Escape();
+                                            /** Not Work anymore
                                             if (this.MasteryChecked)
                                             {
                                                 this.WeightedClick(MasteryPopupPM.CloseButton, 1.0, 1.0, 1, 0, "left");
@@ -2272,6 +2273,7 @@ namespace SevenKnightsAI.Classes
                                             SevenKnightsCore.Sleep(500);
                                             this.MasteryChecked = true;
                                             this.WeightedClick(MasteryPopupPM.CloseButton, 1.0, 1.0, 1, 0, "left");
+                                            */
                                             break;
 
                                         case SceneType.ADVENTURE_MODES:
@@ -2789,6 +2791,7 @@ namespace SevenKnightsAI.Classes
                                             }
                                             this.Log("Hero Level 30", this.COLOR_LEVEL_30);
                                             this.HeroLVUPCount();
+                                            SevenKnightsCore.Sleep(300);
                                             if (this.AISettings.AD_Formation != Formation.None && this.AISettings.AD_HeroManagePositions != null && this.AISettings.AD_HeroManagePositions.Length > 0)
                                             {
                                                 this.ChangeObjective(Objective.HERO_MANAGEMENT);

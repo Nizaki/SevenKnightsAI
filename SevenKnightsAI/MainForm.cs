@@ -764,7 +764,6 @@ namespace SevenKnightsAI
             this.AD_formationComboBox.SelectedIndex = (int)this.AISettings.AD_Formation;
             this.AD_continuousCheckBox.Checked = this.AISettings.AD_Continuous;
             this.AD_elementHeroesCheckBox.Checked = this.AISettings.AD_ElementHeroesOnly;
-            //this.AD_masteryComboBox.SelectedIndex = (int)this.AISettings.AD_Mastery;
             this.AD_StopOnFullHeroes_Checkbox.Checked = this.AISettings.AD_StopOnFullHeroes;
             this.AD_StopOnFullItems_Checkbox.Checked = this.AISettings.AD_StopOnFullItems;
             this.RD_StopOnDragonFound_Checkbox.Checked = this.AISettings.RD_StopOnDragonFound;
@@ -828,8 +827,6 @@ namespace SevenKnightsAI
             this.AR_limitNumericBox.Value = this.AISettings.AR_Limit;
             this.AR_useRubyCheckBox.Checked = this.AISettings.AR_UseRuby;
             this.AR_useRubyNumericBox.Value = this.AISettings.AR_UseRubyAmount;
-            //this.AR_masteryComboBox.SelectedIndex = (int)this.AISettings.AR_Mastery;
-            this.AR_masteryComboBox.SelectedIndex = 0;
         }
 
         private void InitGlobalProfile()
@@ -856,8 +853,6 @@ namespace SevenKnightsAI
             this.GC_limitNumericBox.Value = this.AISettings.GC_Limit;
             this.GC_teamComboBox.SelectedIndex = (int)this.AISettings.GC_Team;
             this.GC_formationComboBox.SelectedIndex = (int)this.AISettings.GC_Formation;
-            //this.GC_masteryComboBox.SelectedIndex = (int)this.AISettings.GC_Mastery;
-            this.GC_masteryComboBox.SelectedIndex = 0;
             this.GC_wave1LoopCheckBox.Checked = this.AISettings.GC_Wave1Loop;
             this.GC_wave2LoopCheckBox.Checked = this.AISettings.GC_Wave2Loop;
             this.SPD_enableCheckbox.Checked  = this.AISettings.SPD_Enable;
@@ -904,8 +899,6 @@ namespace SevenKnightsAI
             this.RD_DragonLVNum.Value = this.AISettings.RD_DragonLV;
             this.RD_DragonLimitCheckBox.Checked = this.AISettings.RD_EnableDragonLimit;
             this.RD_DragonLimitNumericBox.Value = this.AISettings.RD_DragonLimit;
-            //this.RD_masteryComboBox.SelectedIndex = (int)this.AISettings.RD_Mastery;
-            //this.RD_masteryComboBox.SelectedIndex = 0;
             this.RD_team1LoopCheckBox.Checked = this.AISettings.RD_Team1Loop;
             this.RD_team2LoopCheckBox.Checked = this.AISettings.RD_Team2Loop;
             this.RD_TryOwnDragonCheckBox.Checked = this.AISettings.RD_TryOwnDragon;
@@ -1198,37 +1191,6 @@ namespace SevenKnightsAI
         private void MainForm_Shown(object sender, EventArgs e)
         { }
 
-        private void masteryComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ComboBox comboBox = sender as ComboBox;
-            if (comboBox == null)
-            {
-                return;
-            }
-            short num = Convert.ToInt16(comboBox.Tag);
-            Mastery selectedIndex = (Mastery)comboBox.SelectedIndex;
-            switch (num)
-            {
-                case 0:
-                    this.AISettings.AD_Mastery = selectedIndex;
-                    return;
-
-                case 1:
-                    this.AISettings.GC_Mastery = selectedIndex;
-                    return;
-
-                case 2:
-                    this.AISettings.AR_Mastery = selectedIndex;
-                    return;
-
-                case 3:
-                    this.AISettings.RD_Mastery = selectedIndex;
-                    return;
-
-                default:
-                    return;
-            }
-        }
 
         private void PauseAI()
         {
